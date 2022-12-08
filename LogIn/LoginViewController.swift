@@ -8,12 +8,60 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
+    private let userName = "user"
+    private let password = "pass"
+    
+    // MARK: - IBOutlet
+    
+    @IBOutlet var userNameField: UITextField!
+    @IBOutlet var passwordFeeld: UITextField!
+    
+    // MARK: - override LoginViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
     }
+    // MARK: - IBAction
+    
+    
+    @IBAction func loginButton() {
+        if userNameField.text == userName && passwordFeeld.text == password {
+//            if let newViewController = storyboard?.instantiateViewController(withIdentifier: WelcomeViewController) {
+//                present(newViewController, animated: true)
+//            }
 
-
+        } else {
+            passwordFeeld.text = ""
+            showAlertController(title: "Invalid login or password", massege: "Please, enter correct login and password")
+        }
+    }
+    
+    @IBAction func getUserName() {
+        showAlertController(title: "Oops!", massege: "Your name is \(userName)")
+    }
+    
+    @IBAction func getPassword() {
+        showAlertController(title: "Oops!", massege: "Your password is \(password)")
+    }
+    
+    // MARK: - setup view
+    
+ //   private extension LoginViewController {
+        
+  //  }
+    
+    // MARK: - setup views
+    
+    private func showAlertController(title: String, massege: String) {
+        
+        let alert = UIAlertController(title: title, message: massege, preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(okButton)
+        present(alert, animated: true)
+        
+    }
 }
 
