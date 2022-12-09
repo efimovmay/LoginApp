@@ -87,8 +87,8 @@
         <!--Welcome View Controller-->
         <scene sceneID="YeO-Wm-knx">
             <objects>
-                <viewController id="7yY-HO-RX6" customClass="WelcomeViewController" customModule="LogIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ImP-mI-7Ep">
+                <viewController storyboardIdentifier="WelcomeVC" id="7yY-HO-RX6" customClass="WelcomeViewController" customModule="LogIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="WelcomeVC" id="ImP-mI-7Ep">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

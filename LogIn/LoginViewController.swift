@@ -29,13 +29,12 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButton() {
         if userNameField.text == userName && passwordFeeld.text == password {
-//            if let newViewController = storyboard?.instantiateViewController(withIdentifier: WelcomeViewController) {
-//                present(newViewController, animated: true)
-//            }
-
+            let welcomeVC = storyboard?.instantiateViewController(withIdentifier: "WelcomeVC")
+            
+            present(welcomeVC!, animated: true)
         } else {
-            passwordFeeld.text = ""
             showAlertController(title: "Invalid login or password", massege: "Please, enter correct login and password")
+            passwordFeeld.text = ""
         }
     }
     
