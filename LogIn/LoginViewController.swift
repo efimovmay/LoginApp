@@ -34,6 +34,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
     
@@ -54,7 +55,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
             passwordFeeld.text = ""
         }
     }
-    
+
     @IBAction func getUserName() {
         showAlertController(title: "Oops!", massege: "Your name is \(userName)")
         userNameField.text = ""
@@ -62,6 +63,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func getPassword() {
         showAlertController(title: "Oops!", massege: "Your password is \(password)")
+        passwordFeeld.text = ""
     }
     
     // MARK: - Public Methods
