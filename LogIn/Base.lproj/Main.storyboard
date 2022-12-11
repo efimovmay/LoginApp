@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="LogIn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="LoginViewController" customModule="LogIn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,6 +78,7 @@
                     <connections>
                         <outlet property="passwordFeeld" destination="Iez-iQ-i7F" id="B6b-29-crP"/>
                         <outlet property="userNameField" destination="hrV-CR-iof" id="kai-0U-DiR"/>
+                        <segue destination="7yY-HO-RX6" kind="show" identifier="showWelcomeVC" id="oSQ-xx-iHN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -89,19 +90,22 @@
             <objects>
                 <viewController storyboardIdentifier="WelcomeVC" id="7yY-HO-RX6" customClass="WelcomeViewController" customModule="LogIn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="WelcomeVC" id="ImP-mI-7Ep">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7T7-AY-aAs">
-                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                                <rect key="frame" x="186" y="408.5" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="linkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEI-qd-acx">
-                                <rect key="frame" x="166" y="757" width="82" height="35"/>
+                                <rect key="frame" x="166" y="733" width="82" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log out"/>
+                                <connections>
+                                    <segue destination="XET-My-r3Z" kind="unwind" unwindAction="unwindFor:" id="aCJ-J4-qGF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yIe-w3-hO0"/>
@@ -115,8 +119,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6ZY-9b-0Ke"/>
+                    <connections>
+                        <outlet property="userNameTF" destination="7T7-AY-aAs" id="BPR-06-Zua"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsj-8h-Qig" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="XET-My-r3Z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="879" y="-27"/>
         </scene>

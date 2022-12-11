@@ -7,7 +7,26 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+final class WelcomeViewController: UIViewController {
+    
+    // MARK: - IBOutlet
+    
+    @IBOutlet var userNameTF: UILabel!
+    
+    // MARK: - Public Properties
+    
+    var userName: String!
+    
+    // MARK: - override WelcomeViewController
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        userNameTF.text = userName
+    }
+    
+}
     
 
-}
+
+
