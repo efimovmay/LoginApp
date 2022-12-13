@@ -22,15 +22,15 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: - override LoginViewController
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         userNameField.delegate = self
         passwordFeeld.delegate = self
-        
-        super.viewDidLoad()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.userName = userNameField.text
+        welcomeVC.userName = userName
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

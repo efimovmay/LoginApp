@@ -39,6 +39,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B4176922949021900F0D31E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5B8A671829411346000CC785 /* LoginViewController.swift */,
+				5B8A6728294118D3000CC785 /* WelcomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5B4176932949026B00F0D31E /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				5B8A671429411346000CC785 /* AppDelegate.swift */,
+				5B8A671629411346000CC785 /* SceneDelegate.swift */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		5B4176942949028D00F0D31E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5B8A671A29411346000CC785 /* Main.storyboard */,
+				5B8A671F29411348000CC785 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5B417695294902B700F0D31E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5B8A670829411346000CC785 = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +92,11 @@
 		5B8A671329411346000CC785 /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
-				5B8A671429411346000CC785 /* AppDelegate.swift */,
-				5B8A671629411346000CC785 /* SceneDelegate.swift */,
-				5B8A671829411346000CC785 /* LoginViewController.swift */,
-				5B8A6728294118D3000CC785 /* WelcomeViewController.swift */,
-				5B8A671A29411346000CC785 /* Main.storyboard */,
+				5B4176922949021900F0D31E /* ViewControllers */,
+				5B417695294902B700F0D31E /* Models */,
+				5B4176942949028D00F0D31E /* Storyboards */,
+				5B4176932949026B00F0D31E /* SupportFiles */,
 				5B8A671D29411348000CC785 /* Assets.xcassets */,
-				5B8A671F29411348000CC785 /* LaunchScreen.storyboard */,
 				5B8A672229411348000CC785 /* Info.plist */,
 			);
 			path = LogIn;
