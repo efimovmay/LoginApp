@@ -16,8 +16,8 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Private Properties
     
-    private let userName = "user"
-    private let password = "pass"
+    private let userName = ""
+    private let password = ""
     
     // MARK: - override LoginViewController
     
