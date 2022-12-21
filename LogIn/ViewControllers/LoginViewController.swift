@@ -16,8 +16,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Private Properties
     
-    private let userName = ""
-    private let password = ""
+    private var user = User.getUser()
     
     // MARK: - override LoginViewController
     
@@ -29,8 +28,20 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.userName = userName
+        guard let tabBarVC = segue.destination as? UITabBarController else { return }
+        guard let viewControllersTabBar = tabBarVC.viewControllers else { return }
+        
+        viewControllersTabBar.forEach { viewController in
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.userName = userNameField.text!
+                
+            } else if let navigationVC = viewController as? UINavigationController {
+                guard let aboutVC = navigationVC.topViewController as? AboutViewController else { return }
+                aboutVC.hiText = user.persons.about
+                aboutVC.portrait = user.persons.image
+                    
+            }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -47,7 +58,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginButton() {
-        if userNameField.text == userName && passwordFeeld.text == password {
+        if userNameField.text == user.name && passwordFeeld.text == user.password {
             performSegue(withIdentifier: "showWelcomeVC", sender: nil)
         } else {
             showAlertController(title: "Invalid login or password",
@@ -57,12 +68,12 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func getUserName() {
-        showAlertController(title: "Oops!", massege: "Your name is \(userName)")
+        showAlertController(title: "Oops!", massege: "Your name is \(user.name)")
         userNameField.text = ""
     }
     
     @IBAction func getPassword() {
-        showAlertController(title: "Oops!", massege: "Your password is \(password)")
+        showAlertController(title: "Oops!", massege: "Your password is \(user.password)")
         passwordFeeld.text = ""
     }
     

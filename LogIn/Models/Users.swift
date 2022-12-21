@@ -6,14 +6,30 @@
 //
 
 
-struct Users {
-    let user: String
+struct User {
+    let name: String
     let password: String
-    let Persons: [Person]
+    let persons: Person
+    let hobbys: [Hobby]
+    
+    static func getUser() -> User {
+        User(name: "Cat",
+             password: "",
+             persons: Person(about: "Типичный полосатый кот. Характер покладистый, не женат. Всегда линяет. Отзывается на 'хороший мальчик' и 'котлета'.   ", image: "portrait"),
+             hobbys: [Hobby(type: "Походы", image: ""),
+                      Hobby(type: "Похавать", image: ""),
+                      Hobby(type: "Кайтинг", image: "")]
+        )
+    }
 }
 
 struct Person {
-    let name: String
+    let about: String
+    let image: String
 }
 
+struct Hobby {
+    let type: String
+    let image: String
+}
 
