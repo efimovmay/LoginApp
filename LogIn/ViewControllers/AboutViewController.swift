@@ -17,18 +17,27 @@ final class AboutViewController: UIViewController {
     
     // MARK: - Public Properties
     
-    var hiText = ""
-    var portrait = ""
+    var user = User(name: "",
+                      password: "",
+                      persons: Person(about: "", image: ""),
+                      hobbys: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        hiTextField.text = hiText
+        hiTextField.text = user.persons.about
 
-        portraitImage.image = UIImage(named: portrait)
+        portraitImage.image = UIImage(named: user.persons.image)
         portraitImage.layer.cornerRadius = 15
         
     }
     
+    // MARK: - Override AboutViewController
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let hobbyVC = segue.destination as? HobbyViewController else { return }
+        hobbyVC.hobbys = user.hobbys
+    }
 
 }

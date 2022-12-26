@@ -33,16 +33,15 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         
         viewControllersTabBar.forEach { viewController in
             if let welcomeVC = viewController as? WelcomeViewController {
-                welcomeVC.userName = userNameField.text!
+                welcomeVC.userName = user.name
                 
             } else if let navigationVC = viewController as? UINavigationController {
                 guard let aboutVC = navigationVC.topViewController as? AboutViewController else { return }
-                aboutVC.hiText = user.persons.about
-                aboutVC.portrait = user.persons.image
-                    
+                aboutVC.user = user
             }
         }
     }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)

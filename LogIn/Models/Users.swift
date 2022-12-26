@@ -16,9 +16,9 @@ struct User {
         User(name: "Cat",
              password: "",
              persons: Person(about: "Типичный полосатый кот. Характер покладистый, не женат. Всегда линяет. Отзывается на 'хороший мальчик' и 'котлета'.   ", image: "portrait"),
-             hobbys: [Hobby(type: "Походы", image: ""),
-                      Hobby(type: "Похавать", image: ""),
-                      Hobby(type: "Кайтинг", image: "")]
+             hobbys: [Hobby(type: "Природа его страсть", image: "travel"),
+                      Hobby(type: "Иногда, крадет еду у хозяев", image: "eat"),
+                      Hobby(type: "Обожает клевые аксесуары", image: "fashion")]
         )
     }
 }
